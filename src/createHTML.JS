@@ -1,14 +1,19 @@
 // Create Manager HTML
 const createManager = function (manager) {
 	return `
+
    <div class="card  shadow m-3" style="width: 15rem;">
    <div class="card-header text-white bg-primary mb-2">
-        <h2>${manager.name}</h2>
+
+        <div class="d-flex align-items-end" style="word-break: break-word;">
+        <h2>${manager.name} <span><i class="fa-solid fa-mug-hot emoji"></i> Manager</span></h2>
+        
+    </div>
    </div>
    <div class="card-body ">
       <ul class="list-group list-group-flush border border-secondary rounded-1 ">
         <li class="list-group-item card-id">${manager.id}</li>
-        <li class="list-group-item card-email">${manager.email}</li>
+        <li class="list-group-item card-email">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
         <li class="list-group-item card-number">${manager.officeNumber}</li>
       </ul>
    </div>
@@ -20,29 +25,37 @@ const createEngineer = function (engineer) {
 	return `
    <div class="card  shadow m-3" style="width: 15rem;">
    <div class="card-header text-white bg-primary mb-2">
-        <h2>${engineer.name}</h2>
+        
+        <div class="d-flex align-items-end" style="word-break: break-word;">
+        <h2>${engineer.name} <span><i class="fa-solid fa-glasses"></i> </span> Engineer</h2>
+        
+    </div>
+
    </div>
    <div class="card-body ">
       <ul class="list-group list-group-flush border border-secondary rounded-1 ">
         <li class="list-group-item card-id">${engineer.id}</li>
-        <li class="list-group-item card-email">${engineer.email}</li>
-        <li class="list-group-item card-number">${engineer.github}</li>
+        <li class="list-group-item card-email">Email: <a href="${engineer.email}">${engineer.email}</a></li>
+        <li class="list-group-item card-git">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
       </ul>
    </div>
   </div>
    `;
 };
 // Create Intern HTML
-const createInter = function (intern) {
+const createIntern = function (intern) {
 	return `
    <div class="card  shadow m-3" style="width: 15rem;">
    <div class="card-header text-white bg-primary mb-2">
-        <h2>${intern.name}</h2>
+   <div class="d-flex align-items-end" style="word-break: break-word;">
+   <h2>${intern.name} <span><i class="fa-solid fa-user-graduate"></i> Intern</span></h2>
+   
+</div>
    </div>
    <div class="card-body ">
       <ul class="list-group list-group-flush border border-secondary rounded-1 ">
         <li class="list-group-item card-id">${intern.id}</li>
-        <li class="list-group-item card-email">${intern.email}</li>
+        <li class="list-group-item card-email">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
         <li class="list-group-item card-number">${intern.school}</li>
       </ul>
    </div>
@@ -72,8 +85,8 @@ generateHTML = (data) => {
 			teamAssemble.push(engineerInfo);
 		}
 		// intern
-		if (role === 'intern') {
-			const internInfo = createInter(employee);
+		if (role === 'Intern') {
+			const internInfo = createIntern(employee);
 			teamAssemble.push(internInfo);
 		}
 	}
@@ -91,6 +104,7 @@ const createTeamPage = function (employeeRoles) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a969dfee10.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <title>Team Profile</title>

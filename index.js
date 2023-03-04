@@ -225,13 +225,12 @@ const startEngineer = () => {
 };
 
 const startTeam = () => {
-	fs.writeFile('./dist/index.html', JSON.stringify(teamAssemble), (err) => {
+	const content = generateHTML(teamAssemble);
+	fs.writeFile('./dist/index.html', content, (err) => {
 		if (err) {
 			console.log(err);
 		} else {
-			console.log(
-				'Your team profile has been successfully created! Please check out the index.html'
-			);
+			console.log('Team profile has been successfully created!');
 		}
 	});
 };
