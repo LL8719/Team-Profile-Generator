@@ -11,6 +11,7 @@
 ## Description
 
 Team Profile Generator id a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.
+![screenshot](./images/Screenshot%202023-03-06%20102452.png)
 
 ## Table of Contents (Optional)
 
