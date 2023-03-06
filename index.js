@@ -5,6 +5,7 @@ const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
 const generateHTML = require('./src/createHTML');
 
+// Array where roles will be pushed after going through the prompts.
 const teamAssemble = [];
 
 const startManager = () => {

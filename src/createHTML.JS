@@ -1,3 +1,4 @@
+// Creates the HTML card for each role.
 // Create Manager HTML
 const createManager = function (manager) {
 	return `
@@ -12,7 +13,7 @@ const createManager = function (manager) {
    </div>
    <div class="card-body ">
       <ul class="list-group list-group-flush border border-secondary rounded-1 ">
-        <li class="list-group-item card-id">${manager.id}</li>
+        <li class="list-group-item card-id">ID: ${manager.id}</li>
         <li class="list-group-item card-email">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
         <li class="list-group-item card-number">${manager.officeNumber}</li>
       </ul>
@@ -34,9 +35,9 @@ const createEngineer = function (engineer) {
    </div>
    <div class="card-body ">
       <ul class="list-group list-group-flush border border-secondary rounded-1 ">
-        <li class="list-group-item card-id">${engineer.id}</li>
-        <li class="list-group-item card-email">Email: <a href="${engineer.email}">${engineer.email}</a></li>
-        <li class="list-group-item card-git">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
+        <li class="list-group-item card-id">ID: ${engineer.id}</li>
+        <li class="list-group-item card-email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+        <li class="list-group-item card-git">Github: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
       </ul>
    </div>
   </div>
@@ -54,7 +55,7 @@ const createIntern = function (intern) {
    </div>
    <div class="card-body ">
       <ul class="list-group list-group-flush border border-secondary rounded-1 ">
-        <li class="list-group-item card-id">${intern.id}</li>
+        <li class="list-group-item card-id">ID: ${intern.id}</li>
         <li class="list-group-item card-email">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
         <li class="list-group-item card-number">${intern.school}</li>
       </ul>
@@ -62,8 +63,9 @@ const createIntern = function (intern) {
   </div>
    `;
 };
-
+// Iterates through roles and puts together the team based while checking selections.
 generateHTML = (data) => {
+	//returns empty string if data is falsy
 	if (!data || !Array.isArray(data)) {
 		return '';
 	}
@@ -96,7 +98,7 @@ generateHTML = (data) => {
 
 	return createTeam;
 };
-
+//Creates main HTML and pushes each card for the role selected.
 const createTeamPage = function (employeeRoles) {
 	return `<!DOCTYPE html>
 <html lang="en">
